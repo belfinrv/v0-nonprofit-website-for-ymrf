@@ -2,8 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
-import { NewsletterForm } from "./newsletter-form"
-
 const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Programs", href: "/programs" },
@@ -14,10 +12,10 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/ymrf", label: "Facebook" },
-  { icon: Twitter, href: "https://twitter.com/ymrf", label: "Twitter" },
-  { icon: Linkedin, href: "https://linkedin.com/company/ymrf", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com/ymrf", label: "Instagram" },
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Instagram, href: "#", label: "Instagram" },
 ]
 
 export function Footer() {
@@ -68,7 +66,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-white/70 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />
-                <span>Raleigh, North Carolina, USA</span>
+                <span>City, State, USA</span>
               </li>
             </ul>
           </div>
@@ -88,8 +86,7 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            <NewsletterForm />
-            <p className="text-white/60 text-xs leading-relaxed mt-4">
+            <p className="text-white/60 text-xs leading-relaxed">
               Follow us for updates on programs, events, and student achievements.
             </p>
           </div>

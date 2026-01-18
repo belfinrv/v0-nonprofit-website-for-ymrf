@@ -178,7 +178,7 @@ export default function DonatePage() {
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
             Young Minds Research Foundation, Inc. is a registered 501(c)(3) nonprofit organization. Donations are
-            tax-deductible to the extent permitted by law. You will receive a tax receipt via email
+            tax-deductible to the extent permitted by law. EIN: XX-XXXXXXX. You will receive a tax receipt via email
             after your donation.
           </p>
         </div>

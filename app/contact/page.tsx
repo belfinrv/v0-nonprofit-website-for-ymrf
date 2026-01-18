@@ -27,7 +27,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    content: "Raleigh, North Carolina, USA",
+    content: "123 Research Drive, City, State 12345",
     link: null,
   },
   {
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-muted-foreground/50 mx-auto mb-2" />
                     <p className="text-sm text-muted-foreground">Map placeholder</p>
-                    <p className="text-xs text-muted-foreground">Raleigh, North Carolina, USA</p>
+                    <p className="text-xs text-muted-foreground">123 Research Drive, City, State</p>
                   </div>
                 </div>
               </div>

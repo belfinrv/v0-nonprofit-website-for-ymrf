@@ -58,7 +58,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-navy transition-colors rounded-md hover:bg-muted"
+                  className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-[#0B3C5D] transition-colors rounded-md hover:bg-muted"
                 >
                   {item.label}
                 </Link>
@@ -69,7 +69,7 @@ export function Header() {
             <div className="flex items-center gap-3">
               <Button
                 onClick={() => setIsModalOpen(true)}
-                className="hidden sm:flex bg-teal hover:bg-teal/90 text-white"
+                className="hidden sm:flex bg-[#1FB6A6] hover:bg-[#1a9e90] text-white"
               >
                 Get Involved
               </Button>
@@ -98,7 +98,7 @@ export function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="px-3 py-2 text-base font-medium text-foreground/80 hover:text-navy transition-colors rounded-md hover:bg-muted"
+                        className="px-3 py-2 text-base font-medium text-foreground/80 hover:text-[#0B3C5D] transition-colors rounded-md hover:bg-muted"
                       >
                         {item.label}
                       </Link>
@@ -108,7 +108,7 @@ export function Header() {
                         setIsMobileMenuOpen(false)
                         setIsModalOpen(true)
                       }}
-                      className="mt-4 bg-teal hover:bg-teal/90 text-white"
+                      className="mt-4 bg-[#1FB6A6] hover:bg-[#1a9e90] text-white"
                     >
                       Get Involved
                     </Button>

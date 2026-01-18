@@ -1,10 +1,10 @@
 const partners = [
-  { name: "NC State University" },
-  { name: "UNC Chapel Hill" },
-  { name: "UNC Charlotte" },
-  { name: "Duke University" },
-  { name: "National Science Foundation" },
-  { name: "SmartNet Lab" },
+  { name: "University Partner 1" },
+  { name: "University Partner 2" },
+  { name: "Tech Company 1" },
+  { name: "Research Institute" },
+  { name: "Foundation Partner" },
+  { name: "Corporate Sponsor" },
 ]
 
 export function PartnersStrip() {
