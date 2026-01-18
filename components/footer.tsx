@@ -14,10 +14,10 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com/ymrf", label: "Facebook" },
+  { icon: Twitter, href: "https://twitter.com/ymrf", label: "Twitter" },
+  { icon: Linkedin, href: "https://linkedin.com/company/ymrf", label: "LinkedIn" },
+  { icon: Instagram, href: "https://instagram.com/ymrf", label: "Instagram" },
 ]
 
 export function Footer() {

@@ -10,7 +10,7 @@ const events = [
     id: 1,
     title: "YMRF Spring Research Conference",
     date: "March 15-16, 2026",
-    location: "Virtual + University of California",
+    location: "UNC Chapel Hill / Virtual",
     type: "Conference",
     format: "Hybrid",
     description:
@@ -22,7 +22,7 @@ const events = [
     id: 2,
     title: "AI for Good Hackathon",
     date: "April 5-6, 2026",
-    location: "Online",
+    location: "Online / Research Triangle Park",
     type: "Hackathon",
     format: "Virtual",
     description:
@@ -34,7 +34,7 @@ const events = [
     id: 3,
     title: "Python for Research Boot Camp",
     date: "May 1-14, 2026",
-    location: "Online + Select Partner Schools",
+    location: "NC State Centennial Campus",
     type: "Boot Camp",
     format: "Hybrid",
     description:
@@ -46,7 +46,7 @@ const events = [
     id: 4,
     title: "Scientific Writing Workshop",
     date: "June 8, 2026",
-    location: "Online",
+    location: "UNC Charlotte @ SmartNet Lab",
     type: "Workshop",
     format: "Virtual",
     description:
@@ -58,7 +58,7 @@ const events = [
     id: 5,
     title: "Summer Research Symposium",
     date: "July 20, 2026",
-    location: "Boston Convention Center",
+    location: "Raleigh Convention Center",
     type: "Conference",
     format: "In-Person",
     description:
