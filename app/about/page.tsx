@@ -46,41 +46,44 @@ const whyItMatters = [
   },
 ]
 
-const people = [
-  {
-    name: "Dr. Belfin Robinson Vimala",
-    role: "Founding Board Member / Computer Scientist",
-    affiliation: "UNC Chapel Hill",
-    bio: "Passionate about empowering young researchers through technology and structured mentorship.",
-    type: "Board",
-  },
-  {
-    name: "Dr. Florence Martin",
-    role: "Advisory Board Member",
-    affiliation: "NC State University",
-    bio: "Professor in Learning, Design and Technology with a focus on STEM education outcomes.",
-    type: "Board",
-  },
-  {
-    name: "Sujjay Karthikeyan",
-    role: "Founding Board Member",
-    affiliation: "UNC Charlotte @ SmartNet Lab",
-    bio: "Research Assistant dedicated to bridging the gap between high school and collegiate research.",
-    type: "Board",
-  },
+const leadership = [
   {
     name: "Dr. Sarah Mitchell",
     role: "Executive Director",
-    affiliation: "NC STEM Coalition",
-    bio: "Educational leader with 15+ years of experience in fostering scientific inquiry in schools.",
-    type: "Lead",
+    bio: "Former research professor with 15+ years in STEM education.",
   },
   {
     name: "James Rodriguez",
     role: "Program Director",
-    affiliation: "YMRF Operations",
-    bio: "Expert in youth program development and academic-industry partnerships.",
-    type: "Lead",
+    bio: "Educational leader passionate about student success.",
+  },
+  {
+    name: "Dr. Emily Chen",
+    role: "Board Chair",
+    bio: "Scientist and advocate for diversity in STEM.",
+  },
+  {
+    name: "Michael Thompson",
+    role: "Partnerships Lead",
+    bio: "Experienced in building academic-industry collaborations.",
+  },
+]
+
+const boardMembers = [
+  {
+    name: "Dr. Belfin Robinson Vimala",
+    role: "Computer Scientist / Research Associate",
+    affiliation: "UNC Chapel Hill",
+  },
+  {
+    name: "Dr. Florence Martin",
+    role: "Professor in Learning, Design and Technology",
+    affiliation: "NC State University, College of Education",
+  },
+  {
+    name: "Sujjay Karthikeyan",
+    role: "Research Assistant @ SmartNet Lab",
+    affiliation: "UNC Charlotte",
   },
 ]
 
@@ -203,34 +206,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our People */}
+      {/* Leadership */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="Our Community"
-            title="Team & Advisors"
-            description="Dedicated researchers and educators guiding YMRF's mission."
+            badge="Leadership"
+            title="Meet Our Team"
+            description="Dedicated professionals guiding YMRF's mission."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {people.map((person) => (
-              <Card key={person.name} className="hover:shadow-lg transition-all border-t-4 border-t-[#1FB6A6]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {leadership.map((person) => (
+              <Card key={person.name} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-8 pb-6">
-                  <div className="w-16 h-16 rounded-full bg-[#0B3C5D]/5 mx-auto mb-4 flex items-center justify-center">
-                    {person.type === "Board" ? (
-                      <Users className="w-8 h-8 text-[#0B3C5D]" />
-                    ) : (
-                      <GraduationCap className="w-8 h-8 text-[#1FB6A6]" />
-                    )}
+                  <div className="w-20 h-20 rounded-full bg-[#1FB6A6]/20 mx-auto mb-4 flex items-center justify-center">
+                    <GraduationCap className="w-8 h-8 text-[#1FB6A6]" />
                   </div>
-                  <h3 className="font-semibold text-[#0B3C5D] text-center text-lg">{person.name}</h3>
-                  <p className="text-sm text-[#1FB6A6] text-center mb-1">{person.role}</p>
-                  <p className="text-xs text-muted-foreground text-center mb-3">
-                    {person.affiliation}
-                  </p>
-                  <p className="text-xs text-muted-foreground text-center line-clamp-3">
-                    {person.bio}
-                  </p>
+                  <h3 className="font-semibold text-[#0B3C5D]">{person.name}</h3>
+                  <p className="text-sm text-[#1FB6A6] mb-2">{person.role}</p>
+                  <p className="text-xs text-muted-foreground">{person.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Board Members */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeader
+            badge="Board Members"
+            title="Our Advisory Board"
+            description="Distinguished researchers and educators shaping YMRF's strategic direction."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {boardMembers.map((member) => (
+              <Card key={member.name} className="hover:shadow-lg transition-shadow border-t-4 border-t-[#F4C430]">
+                <CardContent className="pt-8 pb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#0B3C5D]/10 mx-auto mb-4 flex items-center justify-center">
+                    <Users className="w-8 h-8 text-[#0B3C5D]" />
+                  </div>
+                  <h3 className="font-semibold text-[#0B3C5D] text-center text-lg">{member.name}</h3>
+                  <p className="text-sm text-[#1FB6A6] text-center mb-2">{member.role}</p>
+                  <p className="text-xs text-muted-foreground text-center">{member.affiliation}</p>
                 </CardContent>
               </Card>
             ))}

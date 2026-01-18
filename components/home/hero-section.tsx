@@ -42,7 +42,7 @@ export function HeroSection() {
               playsInline
               className="w-40 h-40 md:w-52 md:h-52 mx-auto object-contain"
             >
-              <source src="/motion-graphic.mp4" type="video/mp4" />
+              <source src="/ymrf-logo-animation.mp4" type="video/mp4" />
             </video>
           </div>
 
