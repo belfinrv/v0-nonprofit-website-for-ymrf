@@ -63,16 +63,16 @@ const leadership = [
     bio: "Scientist and advocate for diversity in STEM.",
   },
   {
-    name: "Michael Thompson",
-    role: "Partnerships Lead",
-    bio: "Experienced in building academic-industry collaborations.",
+    name: "Sujjay Karthikeyan",
+    role: "Student President",
+    bio: "Research Assistant @ SmartNet Lab, UNC Charlotte.",
   },
 ]
 
 const boardMembers = [
   {
     name: "Dr. Belfin Robinson Vimala",
-    role: "Computer Scientist / Research Associate",
+    role: "Computer Scientist | Expert in Data Analytics, Neuro-informatics & AI | Graph Theory & LLM Specialist",
     affiliation: "UNC Chapel Hill",
   },
   {
@@ -81,9 +81,9 @@ const boardMembers = [
     affiliation: "NC State University, College of Education",
   },
   {
-    name: "Sujjay Karthikeyan",
-    role: "Research Assistant @ SmartNet Lab",
-    affiliation: "UNC Charlotte",
+    name: "Dr. Andrew Jeyabose",
+    role: "AI Scientist | Postdoctoral Researcher | Healthcare AI Researcher | Editor at Scientific Reports (Springernature)",
+    affiliation: "Academician",
   },
 ]
 
