@@ -25,7 +25,7 @@ YMRF provides a platform where young ideas become research. Our mission is to br
 
 To run the project locally:
 
-1. Clone the repository.
+1. Clone the repository...
 2. Install dependencies:
    ```bash
    npm install
