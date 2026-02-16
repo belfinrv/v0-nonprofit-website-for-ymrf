@@ -50,16 +50,11 @@ const leadership = [
   {
     name: "Sujjay Karthikeyan",
     role: "Student Secretary",
-    bio: "Research Assistant at SmartNet Lab, UNC Charlotte. First student member of the YMRF team.",
+    bio: "Research Assistant at SmartNet Lab, UNC Charlotte.",
   },
 ]
 
 const boardMembers = [
-  {
-    name: "Dr. Andrew Jeyabose",
-    role: "AI Scientist | Postdoctoral Researcher | Editor at Scientific Reports (Springer Nature)",
-    affiliation: "Healthcare AI Researcher & Academician",
-  },
   {
     name: "Dr. Belfin Robinson Vimala",
     role: "Computer Scientist / Research Associate",
@@ -69,6 +64,11 @@ const boardMembers = [
     name: "Dr. Florence Martin",
     role: "Professor in Learning, Design and Technology",
     affiliation: "NC State University, College of Education",
+  },
+  {
+    name: "Dr. Andrew Jeyabose",
+    role: "AI Scientist | Postdoctoral Researcher | Editor at Scientific Reports (Springer Nature)",
+    affiliation: "Healthcare AI Researcher & Academician",
   },
 ]
 
