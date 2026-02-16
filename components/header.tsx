@@ -13,8 +13,6 @@ const navItems = [
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
   { label: "Mentors", href: "/mentors" },
-  { label: "Sponsors", href: "/sponsors" },
-  { label: "Donate", href: "/donate" },
   { label: "Contact", href: "/contact" },
 ]
 
