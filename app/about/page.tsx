@@ -71,6 +71,16 @@ const leadership = [
 
 const boardMembers = [
   {
+    name: "Sujjay Karthikeyan",
+    role: "Student Secretary",
+    affiliation: "UNC Charlotte",
+  },
+  {
+    name: "Dr. Andrew Jeyabose",
+    role: "AI Scientist | Postdoctoral Researcher | Editor at Scientific Reports (Springer Nature)",
+    affiliation: "Healthcare AI Researcher & Academician",
+  },
+  {
     name: "Dr. Belfin Robinson Vimala",
     role: "Computer Scientist / Research Associate",
     affiliation: "UNC Chapel Hill",
@@ -79,11 +89,6 @@ const boardMembers = [
     name: "Dr. Florence Martin",
     role: "Professor in Learning, Design and Technology",
     affiliation: "NC State University, College of Education",
-  },
-  {
-    name: "Sujjay Karthikeyan",
-    role: "Research Assistant @ SmartNet Lab",
-    affiliation: "UNC Charlotte",
   },
 ]
 
@@ -241,7 +246,7 @@ export default function AboutPage() {
             description="Distinguished researchers and educators shaping YMRF's strategic direction."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {boardMembers.map((member) => (
               <Card key={member.name} className="hover:shadow-lg transition-shadow border-t-4 border-t-[#F4C430]">
                 <CardContent className="pt-8 pb-6">
