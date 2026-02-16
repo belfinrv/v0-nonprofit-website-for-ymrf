@@ -9,7 +9,7 @@ YMRF provides a platform where young ideas become research. Our mission is to br
 ## Key Features
 
 - **Research Mentorship Program**: Hands-on project experience with professional researchers.
-- **STEM Boot Camps**: Intensive training in technical skills like Python, AI, and scientific writing.
+- **STEM Boot Camps**: Intensive training in technical skills like Python, AI, and scientific writing..
 - **Hackathons & Challenges**: Team-based competitions solving real-world problems.
 - **Student Research Conference**: An annual event where students present their findings.
 
