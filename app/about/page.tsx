@@ -48,6 +48,11 @@ const whyItMatters = [
 
 const leadership = [
   {
+    name: "Sujjay Karthikeyan",
+    role: "Student Secretary",
+    bio: "Research Assistant at SmartNet Lab, UNC Charlotte. First student member of the YMRF team.",
+  },
+  {
     name: "Dr. Sarah Mitchell",
     role: "Executive Director",
     bio: "Former research professor with 15+ years in STEM education.",
@@ -220,7 +225,7 @@ export default function AboutPage() {
             description="Dedicated professionals guiding YMRF's mission."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
             {leadership.map((person) => (
               <Card key={person.name} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-8 pb-6">
