@@ -25,6 +25,14 @@ export function FinalCta() {
           >
             <Link href="/mentors">Mentor Signup</Link>
           </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-white/30 text-white bg-white/10 hover:bg-white/20 px-8"
+          >
+            <Link href="/contact">Contact Us</Link>
+          </Button>
         </div>
       </div>
     </section>

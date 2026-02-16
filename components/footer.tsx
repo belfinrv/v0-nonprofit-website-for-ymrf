@@ -7,6 +7,7 @@ const quickLinks = [
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
   { label: "Become a Mentor", href: "/mentors" },
+  { label: "Contact", href: "/contact" },
 ]
 
 const socialLinks = [
@@ -97,7 +98,7 @@ export function Footer() {
               © {currentYear} Young Minds Research Foundation, Inc. All rights reserved.
             </p>
             <p className="text-white/40 text-xs text-center md:text-right max-w-md">
-              YMRF is a nonprofit organization dedicated to empowering young researchers.
+              YMRF is a nonprofit organization. Donations may be tax-deductible as permitted by law.
             </p>
           </div>
         </div>

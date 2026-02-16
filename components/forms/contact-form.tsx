@@ -76,6 +76,8 @@ export function ContactForm() {
             <SelectItem value="programs">Program Information</SelectItem>
             <SelectItem value="application">Application Status</SelectItem>
             <SelectItem value="mentor">Mentor Inquiry</SelectItem>
+            <SelectItem value="sponsor">Sponsorship Inquiry</SelectItem>
+            <SelectItem value="donation">Donation Question</SelectItem>
             <SelectItem value="media">Media / Press</SelectItem>
             <SelectItem value="other">Other</SelectItem>
           </SelectContent>

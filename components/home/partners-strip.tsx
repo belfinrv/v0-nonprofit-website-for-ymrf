@@ -4,7 +4,7 @@ const partners = [
   { name: "Tech Company 1" },
   { name: "Research Institute" },
   { name: "Foundation Partner" },
-  { name: "Industry Partner" },
+  { name: "Corporate Sponsor" },
 ]
 
 export function PartnersStrip() {

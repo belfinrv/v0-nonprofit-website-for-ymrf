@@ -8,7 +8,7 @@ import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact | Young Minds Research Foundation",
-  description: "Get in touch with YMRF. Questions about programs or volunteering? We're here to help.",
+  description: "Get in touch with YMRF. Questions about programs, sponsorship, or volunteering? We're here to help.",
 }
 
 const contactInfo = [
@@ -53,7 +53,8 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Have questions about our programs or how to get involved? We'd love to hear from you.
+            Have questions about our programs, sponsorship opportunities, or how to get involved? We'd love to hear from
+            you.
           </p>
         </div>
       </section>
