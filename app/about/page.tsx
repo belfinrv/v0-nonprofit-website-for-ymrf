@@ -52,34 +52,9 @@ const leadership = [
     role: "Student Secretary",
     bio: "Research Assistant at SmartNet Lab, UNC Charlotte. First student member of the YMRF team.",
   },
-  {
-    name: "Dr. Sarah Mitchell",
-    role: "Executive Director",
-    bio: "Former research professor with 15+ years in STEM education.",
-  },
-  {
-    name: "James Rodriguez",
-    role: "Program Director",
-    bio: "Educational leader passionate about student success.",
-  },
-  {
-    name: "Dr. Emily Chen",
-    role: "Board Chair",
-    bio: "Scientist and advocate for diversity in STEM.",
-  },
-  {
-    name: "Michael Thompson",
-    role: "Partnerships Lead",
-    bio: "Experienced in building academic-industry collaborations.",
-  },
 ]
 
 const boardMembers = [
-  {
-    name: "Sujjay Karthikeyan",
-    role: "Student Secretary",
-    affiliation: "UNC Charlotte",
-  },
   {
     name: "Dr. Andrew Jeyabose",
     role: "AI Scientist | Postdoctoral Researcher | Editor at Scientific Reports (Springer Nature)",
@@ -225,7 +200,7 @@ export default function AboutPage() {
             description="Dedicated professionals guiding YMRF's mission."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
+          <div className="flex justify-center mt-12">
             {leadership.map((person) => (
               <Card key={person.name} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-8 pb-6">
@@ -251,7 +226,7 @@ export default function AboutPage() {
             description="Distinguished researchers and educators shaping YMRF's strategic direction."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {boardMembers.map((member) => (
               <Card key={member.name} className="hover:shadow-lg transition-shadow border-t-4 border-t-[#F4C430]">
                 <CardContent className="pt-8 pb-6">
