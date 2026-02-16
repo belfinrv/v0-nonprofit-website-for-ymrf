@@ -1,6 +1,6 @@
 "use client"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { GraduationCap, Users } from "lucide-react"
+import { GraduationCap, Users, Building2 } from "lucide-react"
 import Link from "next/link"
 
 interface GetInvolvedModalProps {
@@ -22,6 +22,13 @@ const options = [
     description: "Guide the next generation of researchers",
     href: "/mentors",
     color: "bg-[#0B3C5D]",
+  },
+  {
+    icon: Building2,
+    title: "Contact Us",
+    description: "Have questions? Reach out to our team",
+    href: "/contact",
+    color: "bg-[#F4C430]",
   },
 ]
 
