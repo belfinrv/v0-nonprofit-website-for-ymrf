@@ -10,7 +10,7 @@ const events = [
     id: 1,
     title: "YMRF Spring Research Conference",
     date: "March 15-16, 2026",
-    location: "Virtual + University of California",
+    location: "Virtual + North Carolina",
     type: "Conference",
     format: "Hybrid",
     description:
@@ -58,7 +58,7 @@ const events = [
     id: 5,
     title: "Summer Research Symposium",
     date: "July 20, 2026",
-    location: "Boston Convention Center",
+    location: "Chapel Hill, North Carolina",
     type: "Conference",
     format: "In-Person",
     description:

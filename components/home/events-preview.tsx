@@ -6,25 +6,25 @@ import { Calendar, MapPin } from "lucide-react"
 
 const events = [
   {
-    title: "YMRF Spring Research Conference",
-    date: "March 15-16, 2026",
-    location: "Virtual + In-Person",
+    title: "YMRF Student Research Conference",
+    date: "Coming Summer 2026",
+    location: "North Carolina (Hybrid)",
     type: "Conference",
-    description: "Present your research, attend keynotes, and network with peers.",
+    description: "Present your research, attend keynotes, and network with peers and professionals.",
   },
   {
     title: "AI for Good Hackathon",
-    date: "April 5-6, 2026",
+    date: "Coming 2026",
     location: "Online",
     type: "Hackathon",
-    description: "48-hour hackathon focused on AI solutions for social impact.",
+    description: "Team-based hackathon focused on AI solutions for social impact.",
   },
   {
-    title: "Data Science Boot Camp",
-    date: "May 1-14, 2026",
-    location: "Hybrid",
+    title: "Python for Research Boot Camp",
+    date: "Coming 2026",
+    location: "Online",
     type: "Boot Camp",
-    description: "Two-week intensive program on data analysis and visualization.",
+    description: "Intensive program on Python, data analysis, and scientific visualization.",
   },
 ]
 

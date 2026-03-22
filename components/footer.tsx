@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -8,13 +8,6 @@ const quickLinks = [
   { label: "Events", href: "/events" },
   { label: "Become a Mentor", href: "/mentors" },
   { label: "Contact", href: "/contact" },
-]
-
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
 ]
 
 export function Footer() {
@@ -61,32 +54,23 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-white/70 text-sm">
                 <Mail className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />
-                <span>contact@ymrf.org</span>
+                <span>researchbelfin@gmail.com</span>
               </li>
               <li className="flex items-start gap-2 text-white/70 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />
-                <span>City, State, USA</span>
+                <span>Chapel Hill, North Carolina</span>
               </li>
             </ul>
           </div>
 
-          {/* Social & Newsletter */}
+          {/* Connect */}
           <div>
             <h3 className="font-semibold text-[#F4C430] mb-4">Connect With Us</h3>
-            <div className="flex gap-3 mb-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/10 text-white/70 hover:bg-[#1FB6A6] hover:text-white transition-colors"
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">
+              Have questions or want to get involved? Reach out to us at researchbelfin@gmail.com
+            </p>
             <p className="text-white/60 text-xs leading-relaxed">
-              Follow us for updates on programs, events, and student achievements.
+              Social media channels coming soon!
             </p>
           </div>
         </div>

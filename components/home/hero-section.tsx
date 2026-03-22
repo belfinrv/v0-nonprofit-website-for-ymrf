@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button"
 import { Users, Award, Calendar } from "lucide-react"
 
 const stats = [
-  { icon: Users, value: "250+", label: "Students Supported" },
-  { icon: Award, value: "40+", label: "Mentors & Advisors" },
-  { icon: Calendar, value: "15+", label: "Events Hosted" },
+  { icon: Users, value: "STEM", label: "Research & Mentorship" },
+  { icon: Award, value: "Free", label: "Programs for Students" },
+  { icon: Calendar, value: "2026", label: "Launching This Year" },
 ]
 
 export function HeroSection() {
