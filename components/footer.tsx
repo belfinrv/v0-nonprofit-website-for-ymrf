@@ -1,7 +1,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, MapPin } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -56,6 +56,10 @@ export function Footer() {
               <li className="flex items-start gap-2 text-white/70 text-sm">
                 <Mail className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />
                 <span>researchbelfin@gmail.com</span>
+              </li>
+              <li className="flex items-start gap-2 text-white/70 text-sm">
+                <Phone className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />
+                <a href="tel:+13362640909" className="hover:text-[#1FB6A6] transition-colors">+1 (336) 264-0909</a>
               </li>
               <li className="flex items-start gap-2 text-white/70 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />

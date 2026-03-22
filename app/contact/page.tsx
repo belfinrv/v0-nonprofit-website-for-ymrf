@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { SectionHeader } from "@/components/section-header"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, MapPin, Clock } from "lucide-react"
+import { Mail, MapPin, Phone, Clock } from "lucide-react"
 import { ContactForm } from "@/components/forms/contact-form"
 import Link from "next/link"
 
@@ -16,6 +16,12 @@ const contactInfo = [
     title: "Email",
     content: "researchbelfin@gmail.com",
     link: "mailto:researchbelfin@gmail.com",
+  },
+  {
+    icon: Phone,
+    title: "Phone",
+    content: "+1 (336) 264-0909",
+    link: "tel:+13362640909",
   },
   {
     icon: MapPin,
