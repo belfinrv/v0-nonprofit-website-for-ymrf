@@ -1,10 +1,9 @@
 import type { Metadata } from "next"
 import { SectionHeader } from "@/components/section-header"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, MapPin, Phone, Clock } from "lucide-react"
+import { Mail, MapPin, Clock } from "lucide-react"
 import { ContactForm } from "@/components/forms/contact-form"
 import Link from "next/link"
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact | Young Minds Research Foundation",
@@ -15,34 +14,21 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    content: "contact@ymrf.org",
-    link: "mailto:contact@ymrf.org",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    content: "(555) 123-4567",
-    link: "tel:+15551234567",
+    content: "researchbelfin@gmail.com",
+    link: "mailto:researchbelfin@gmail.com",
   },
   {
     icon: MapPin,
-    title: "Address",
-    content: "123 Research Drive, City, State 12345",
+    title: "Location",
+    content: "Chapel Hill, North Carolina",
     link: null,
   },
   {
     icon: Clock,
-    title: "Office Hours",
-    content: "Mon-Fri, 9:00 AM - 5:00 PM EST",
+    title: "Response Time",
+    content: "We typically respond within 48 hours",
     link: null,
   },
-]
-
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
 ]
 
 export default function ContactPage() {
@@ -99,32 +85,10 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Social Links */}
-              <div className="mt-8">
-                <p className="font-semibold text-[#0B3C5D] mb-4">Follow Us</p>
-                <div className="flex gap-3">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      aria-label={social.label}
-                      className="w-10 h-10 flex items-center justify-center rounded-lg bg-muted text-muted-foreground hover:bg-[#1FB6A6] hover:text-white transition-colors"
-                    >
-                      <social.icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="mt-8">
-                <div className="aspect-video rounded-xl bg-muted flex items-center justify-center border border-border">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-muted-foreground/50 mx-auto mb-2" />
-                    <p className="text-sm text-muted-foreground">Map placeholder</p>
-                    <p className="text-xs text-muted-foreground">123 Research Drive, City, State</p>
-                  </div>
-                </div>
+              {/* Social Links - Coming Soon */}
+              <div className="mt-8 p-4 rounded-lg bg-muted/50 border border-border">
+                <p className="font-semibold text-[#0B3C5D] mb-2">Social Media</p>
+                <p className="text-sm text-muted-foreground">Follow us soon! Our social media channels are being set up and will be live shortly.</p>
               </div>
             </div>
           </div>

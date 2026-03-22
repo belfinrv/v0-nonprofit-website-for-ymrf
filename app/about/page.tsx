@@ -46,43 +46,28 @@ const whyItMatters = [
   },
 ]
 
-const leadership = [
-  {
-    name: "Dr. Sarah Mitchell",
-    role: "Executive Director",
-    bio: "Former research professor with 15+ years in STEM education.",
-  },
-  {
-    name: "James Rodriguez",
-    role: "Program Director",
-    bio: "Educational leader passionate about student success.",
-  },
-  {
-    name: "Dr. Emily Chen",
-    role: "Board Chair",
-    bio: "Scientist and advocate for diversity in STEM.",
-  },
-  {
-    name: "Michael Thompson",
-    role: "Partnerships Lead",
-    bio: "Experienced in building academic-industry collaborations.",
-  },
-]
-
 const boardMembers = [
   {
     name: "Dr. Belfin Robinson Vimala",
-    role: "Computer Scientist / Research Associate",
+    role: "Executive Director",
     affiliation: "UNC Chapel Hill",
   },
   {
     name: "Dr. Florence Martin",
-    role: "Professor in Learning, Design and Technology",
+    role: "Director of STEM Education",
     affiliation: "NC State University, College of Education",
   },
   {
+    name: "Dr. Andrew Jeyabose Sundar",
+    role: "Director of Programs & Events",
+    affiliation: "",
+  },
+]
+
+const teamMembers = [
+  {
     name: "Sujjay Karthikeyan",
-    role: "Research Assistant @ SmartNet Lab",
+    role: "Student Secretary",
     affiliation: "UNC Charlotte",
   },
 ]
@@ -138,7 +123,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Founded by educators and researchers who saw the need for earlier exposure to research methodologies,
-                  YMRF has grown into a community of students, mentors, and partners united by a shared vision: to
+                  YMRF is building a community of students, mentors, and partners united by a shared vision: to
                   cultivate the next generation of scientists, engineers, and innovators.
                 </p>
                 <p>
@@ -160,8 +145,55 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Do */}
+      {/* Board of Directors */}
       <section className="py-20 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <SectionHeader
+            badge="Board of Directors"
+            title="Our Leadership"
+            description="Dedicated researchers and educators guiding YMRF's mission and strategic direction."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {boardMembers.map((member) => (
+              <Card key={member.name} className="hover:shadow-lg transition-shadow border-t-4 border-t-[#F4C430]">
+                <CardContent className="pt-8 pb-6">
+                  <div className="w-20 h-20 rounded-full bg-[#0B3C5D]/10 mx-auto mb-4 flex items-center justify-center">
+                    <Users className="w-8 h-8 text-[#0B3C5D]" />
+                  </div>
+                  <h3 className="font-semibold text-[#0B3C5D] text-center text-lg">{member.name}</h3>
+                  <p className="text-sm text-[#1FB6A6] text-center mb-2">{member.role}</p>
+                  {member.affiliation && (
+                    <p className="text-xs text-muted-foreground text-center">{member.affiliation}</p>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Student Secretary */}
+          <div className="mt-12">
+            <h3 className="text-center text-lg font-semibold text-[#0B3C5D] mb-6">Team</h3>
+            <div className="max-w-sm mx-auto">
+              {teamMembers.map((member) => (
+                <Card key={member.name} className="hover:shadow-lg transition-shadow">
+                  <CardContent className="pt-8 pb-6">
+                    <div className="w-20 h-20 rounded-full bg-[#1FB6A6]/20 mx-auto mb-4 flex items-center justify-center">
+                      <GraduationCap className="w-8 h-8 text-[#1FB6A6]" />
+                    </div>
+                    <h3 className="font-semibold text-[#0B3C5D] text-center text-lg">{member.name}</h3>
+                    <p className="text-sm text-[#1FB6A6] text-center mb-2">{member.role}</p>
+                    <p className="text-xs text-muted-foreground text-center">{member.affiliation}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeader badge="What We Do" title="Education, Exposure, Excellence" />
 
@@ -182,7 +214,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why It Matters */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="Why It Matters"
@@ -201,58 +233,6 @@ export default function AboutPage() {
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <SectionHeader
-            badge="Leadership"
-            title="Meet Our Team"
-            description="Dedicated professionals guiding YMRF's mission."
-          />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {leadership.map((person) => (
-              <Card key={person.name} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-8 pb-6">
-                  <div className="w-20 h-20 rounded-full bg-[#1FB6A6]/20 mx-auto mb-4 flex items-center justify-center">
-                    <GraduationCap className="w-8 h-8 text-[#1FB6A6]" />
-                  </div>
-                  <h3 className="font-semibold text-[#0B3C5D]">{person.name}</h3>
-                  <p className="text-sm text-[#1FB6A6] mb-2">{person.role}</p>
-                  <p className="text-xs text-muted-foreground">{person.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Board Members */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <SectionHeader
-            badge="Board Members"
-            title="Our Advisory Board"
-            description="Distinguished researchers and educators shaping YMRF's strategic direction."
-          />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {boardMembers.map((member) => (
-              <Card key={member.name} className="hover:shadow-lg transition-shadow border-t-4 border-t-[#F4C430]">
-                <CardContent className="pt-8 pb-6">
-                  <div className="w-20 h-20 rounded-full bg-[#0B3C5D]/10 mx-auto mb-4 flex items-center justify-center">
-                    <Users className="w-8 h-8 text-[#0B3C5D]" />
-                  </div>
-                  <h3 className="font-semibold text-[#0B3C5D] text-center text-lg">{member.name}</h3>
-                  <p className="text-sm text-[#1FB6A6] text-center mb-2">{member.role}</p>
-                  <p className="text-xs text-muted-foreground text-center">{member.affiliation}</p>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>

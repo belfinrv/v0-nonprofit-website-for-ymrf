@@ -74,8 +74,8 @@ export default function MentorsPage() {
               <div className="flex items-center gap-4">
                 <Heart className="w-12 h-12 text-[#1FB6A6]" />
                 <div>
-                  <p className="text-2xl font-bold text-[#0B3C5D]">95%</p>
-                  <p className="text-sm text-muted-foreground">of mentors say the experience was rewarding</p>
+                  <p className="text-lg font-bold text-[#0B3C5D]">Join Our Founding Mentor Cohort</p>
+                  <p className="text-sm text-muted-foreground">Be among the first mentors to shape YMRF's programs</p>
                 </div>
               </div>
             </div>
