@@ -168,7 +168,7 @@ export default function AboutPage() {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-32 h-32 md:w-40 md:h-40 rounded-xl object-cover flex-shrink-0 mx-auto md:mx-0"
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-xl object-cover object-top flex-shrink-0 mx-auto md:mx-0"
                     />
                     <div>
                       <h3 className="font-semibold text-[#0B3C5D] text-lg">{member.name}</h3>
