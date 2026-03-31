@@ -181,7 +181,6 @@ export function SummerProgramForm() {
                 <SelectValue placeholder="Select grade" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="K">Kindergarten</SelectItem>
                 <SelectItem value="1">1st Grade</SelectItem>
                 <SelectItem value="2">2nd Grade</SelectItem>
                 <SelectItem value="3">3rd Grade</SelectItem>

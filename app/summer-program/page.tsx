@@ -56,6 +56,14 @@ export default function SummerProgramPage() {
               Full Day (9AM–4PM) or Half Day
             </div>
           </div>
+
+          {/* Register Below CTA */}
+          <a href="#register" className="inline-flex flex-col items-center mt-10 text-white/80 hover:text-white transition-colors animate-bounce">
+            <span className="text-2xl md:text-3xl font-bold tracking-wide">Register Below</span>
+            <svg className="w-8 h-8 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
         </div>
       </section>
 
@@ -77,7 +85,7 @@ export default function SummerProgramPage() {
       </section>
 
       {/* Sessions & Registration */}
-      <section className="py-16 bg-muted/50">
+      <section id="register" className="py-16 bg-muted/50 scroll-mt-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase bg-[#1FB6A6]/10 text-[#1FB6A6] rounded-full mb-4">
@@ -113,7 +121,7 @@ export default function SummerProgramPage() {
             </div>
             <div className="p-6 rounded-xl border border-border">
               <h3 className="font-semibold text-[#0B3C5D] mb-2">Who Can Attend?</h3>
-              <p>Elementary school students (rising Kindergarten through 5th grade). No prior STEM experience needed!</p>
+              <p>Elementary school students (rising 1st through 5th grade). No prior STEM experience needed!</p>
             </div>
           </div>
         </div>
