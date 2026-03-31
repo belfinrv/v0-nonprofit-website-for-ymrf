@@ -115,10 +115,6 @@ export default function SummerProgramPage() {
               <h3 className="font-semibold text-[#0B3C5D] mb-2">Who Can Attend?</h3>
               <p>Elementary school students (rising Kindergarten through 5th grade). No prior STEM experience needed!</p>
             </div>
-            <div className="p-6 rounded-xl border border-border">
-              <h3 className="font-semibold text-[#0B3C5D] mb-2">Scholarship</h3>
-              <p>Financial assistance is available for families who need it. Simply indicate your interest during registration, and we will follow up with you.</p>
-            </div>
           </div>
         </div>
       </section>

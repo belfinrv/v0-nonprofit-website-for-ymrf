@@ -21,12 +21,11 @@ const sessions = [
   { id: "aug-03-07", label: "August 3–7", days: 5 },
 ]
 
-// TODO: Replace these with your actual Stripe Payment Links
 const STRIPE_LINKS = {
-  "4-day-full": "PASTE_YOUR_STRIPE_LINK_4DAY_FULL",
-  "4-day-half": "PASTE_YOUR_STRIPE_LINK_4DAY_HALF",
-  "5-day-full": "PASTE_YOUR_STRIPE_LINK_5DAY_FULL",
-  "5-day-half": "PASTE_YOUR_STRIPE_LINK_5DAY_HALF",
+  "4-day-full": "https://buy.stripe.com/7sYeVe9Omg8c72D8SC4ko05",
+  "4-day-half": "https://buy.stripe.com/fZu8wQ8KiaNS2Mngl44ko02",
+  "5-day-full": "https://buy.stripe.com/fZu3cw2lU1difz9fh04ko07",
+  "5-day-half": "https://buy.stripe.com/5kQdRa2lU6xC86H0m64ko04",
 }
 
 function getStripeLink(days: number, sessionType: string): string {
@@ -40,7 +39,6 @@ function getStripeLink(days: number, sessionType: string): string {
 export function SummerProgramForm() {
   const [selectedSession, setSelectedSession] = useState("")
   const [sessionType, setSessionType] = useState("")
-  const [scholarship, setScholarship] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -69,12 +67,6 @@ export function SummerProgramForm() {
 
     setErrors({})
 
-    // If scholarship requested, show confirmation instead of payment
-    if (scholarship === "yes") {
-      setIsSubmitted(true)
-      return
-    }
-
     // Redirect to Stripe payment
     const link = getStripeLink(selectedSessionData?.days || 5, sessionType)
     if (link.startsWith("http")) {
@@ -87,13 +79,9 @@ export function SummerProgramForm() {
     return (
       <div className="text-center py-12 px-6 rounded-xl bg-[#1FB6A6]/10 border border-[#1FB6A6]/20 max-w-2xl mx-auto">
         <CheckCircle2 className="w-16 h-16 text-[#1FB6A6] mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-[#0B3C5D] mb-2">
-          {scholarship === "yes" ? "Application Received!" : "Registration Submitted!"}
-        </h3>
+        <h3 className="text-2xl font-bold text-[#0B3C5D] mb-2">Registration Submitted!</h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          {scholarship === "yes"
-            ? "Thank you for your interest! Our team will reach out to you about scholarship options within 3-5 business days."
-            : "Thank you for registering! If you were redirected to the payment page, please complete your payment. You will receive a confirmation email shortly."}
+          Thank you for registering! Please complete your payment on the Stripe checkout page. You will receive a confirmation email shortly.
         </p>
       </div>
     )
@@ -240,40 +228,6 @@ export function SummerProgramForm() {
           {errors.parentPhone && <p className="text-xs text-red-500">{errors.parentPhone}</p>}
         </div>
 
-        <hr className="border-border" />
-
-        {/* Scholarship Interest */}
-        <div>
-          <h3 className="text-lg font-semibold text-[#0B3C5D] mb-3">Scholarship Interest</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Financial assistance may be available. Would you like to be considered for a scholarship?
-          </p>
-          <div className="flex gap-3">
-            <button
-              type="button"
-              onClick={() => setScholarship("yes")}
-              className={`px-6 py-2 rounded-lg border text-sm font-medium transition-all ${
-                scholarship === "yes"
-                  ? "border-[#1FB6A6] bg-[#1FB6A6]/10 text-[#1FB6A6]"
-                  : "border-border text-muted-foreground hover:border-[#1FB6A6]/40"
-              }`}
-            >
-              Yes
-            </button>
-            <button
-              type="button"
-              onClick={() => setScholarship("no")}
-              className={`px-6 py-2 rounded-lg border text-sm font-medium transition-all ${
-                scholarship === "no"
-                  ? "border-[#1FB6A6] bg-[#1FB6A6]/10 text-[#1FB6A6]"
-                  : "border-border text-muted-foreground hover:border-[#1FB6A6]/40"
-              }`}
-            >
-              No
-            </button>
-          </div>
-        </div>
-
         <div className="space-y-2">
           <Label htmlFor="allergies">Allergies / Medical Notes</Label>
           <Textarea
@@ -302,17 +256,14 @@ export function SummerProgramForm() {
               <div className="text-sm text-muted-foreground space-y-1">
                 <p><strong>Session:</strong> {selectedSessionData?.label} ({selectedSessionData?.days}-day)</p>
                 <p><strong>Type:</strong> {sessionType === "full" ? "Full Day (9AM–4PM)" : "Half Day (9AM–12PM)"}</p>
-                {scholarship === "yes" && (
-                  <p className="text-[#1FB6A6] font-medium">Scholarship requested — we will follow up with you.</p>
-                )}
               </div>
             </CardContent>
           </Card>
         )}
 
         <Button type="submit" className="w-full bg-[#1FB6A6] hover:bg-[#1a9e90] text-white text-base py-6">
-          {scholarship === "yes" ? "Submit Application" : "Register & Proceed to Payment"}
-          {scholarship !== "yes" && <ExternalLink className="w-4 h-4 ml-2" />}
+          Register & Proceed to Payment
+          <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
 
         <p className="text-xs text-center text-muted-foreground">
