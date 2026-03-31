@@ -3,7 +3,6 @@ import { MissionSection } from "@/components/home/mission-section"
 import { ProgramsPreview } from "@/components/home/programs-preview"
 import { EventsPreview } from "@/components/home/events-preview"
 import { ImpactSection } from "@/components/home/impact-section"
-import { PartnersStrip } from "@/components/home/partners-strip"
 import { FinalCta } from "@/components/home/final-cta"
 
 export default function HomePage() {
@@ -14,7 +13,6 @@ export default function HomePage() {
       <ProgramsPreview />
       <EventsPreview />
       <ImpactSection />
-      <PartnersStrip />
       <FinalCta />
     </>
   )
