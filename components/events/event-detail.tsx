@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Users, Clock, CheckCircle2, ArrowRight } from "lucide-react"
+import { Calendar, MapPin, Users, CheckCircle2, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export function EventDetail() {
@@ -10,7 +10,7 @@ export function EventDetail() {
           <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase bg-[#1FB6A6]/10 text-[#1FB6A6] rounded-full mb-4">
             Featured Event
           </span>
-          <h2 className="text-3xl font-bold text-[#0B3C5D] mb-4">YMRF Spring Research Conference 2026</h2>
+          <h2 className="text-3xl font-bold text-[#0B3C5D] mb-4">YMRF Student Research Conference 2026</h2>
           <p className="text-muted-foreground mb-8 leading-relaxed">
             Our flagship annual event brings together student researchers from across the country. Present your work,
             learn from keynote speakers, and connect with peers who share your passion for scientific discovery.
@@ -22,19 +22,15 @@ export function EventDetail() {
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-[#1FB6A6]" />
-                  <span>March 15-16, 2026</span>
+                  <span>Coming Summer 2026</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-[#1FB6A6]" />
-                  <span>Virtual + University of California Campus</span>
+                  <span>North Carolina (Hybrid)</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Users className="w-5 h-5 text-[#1FB6A6]" />
-                  <span>200 attendees (100 in-person, 100 virtual)</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-[#1FB6A6]" />
-                  <span>Registration deadline: March 1, 2026</span>
+                  <span>200 attendees (in-person + virtual)</span>
                 </div>
               </div>
             </div>
@@ -45,7 +41,7 @@ export function EventDetail() {
                 {[
                   "Poster presentation sessions",
                   "Student lightning talks (5-minute presentations)",
-                  "Keynote speakers from MIT, Stanford, and NASA",
+                  "Keynote speakers from leading research institutions",
                   "Networking lunch and social events",
                   "Awards ceremony for outstanding research",
                 ].map((item) => (

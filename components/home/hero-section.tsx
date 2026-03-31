@@ -4,7 +4,7 @@ import { Users, Award, Calendar } from "lucide-react"
 
 const stats = [
   { icon: Users, value: "STEM", label: "Research & Mentorship" },
-  { icon: Award, value: "Free", label: "Programs for Students" },
+  { icon: Award, value: "Free*", label: "Programs (Funding Dependent)" },
   { icon: Calendar, value: "2026", label: "Launching This Year" },
 ]
 

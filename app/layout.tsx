@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     title: "Young Minds Research Foundation",
     description: "Where Young Ideas Become Research",
   },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
+  },
     generator: 'v0.app'
 }
 

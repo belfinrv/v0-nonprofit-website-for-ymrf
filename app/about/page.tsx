@@ -48,19 +48,25 @@ const whyItMatters = [
 
 const boardMembers = [
   {
-    name: "Dr. Belfin Robinson Vimala",
+    name: "Dr. Belfin Robinson, Ph.D.",
     role: "Executive Director",
     affiliation: "UNC Chapel Hill",
+    image: "/belfin-robinson.jpg",
+    bio: "Dr. Belfin Robinson is a Postdoctoral Research Associate at the University of North Carolina Chapel Hill, working at the intersection of Artificial Intelligence and clinical neuroscience. With over 13 years of experience spanning academic research, enterprise software engineering, and AI-driven healthcare innovation, he brings a rare combination of technical depth and real-world impact. His research at UNC's Department of Neurology and Biomedical Research Imaging Center focuses on building deep learning and graph-theoretic models to diagnose conditions such as Alzheimer's disease, chronic pain, and epilepsy — published in 18+ peer-reviewed journals. Before his research career, Dr. Robinson spent nearly a decade as a Professor at Karunya University in India, teaching Data Science, Machine Learning, and Graph Analytics. He has also held software engineering roles at Wipro Technologies and Robert Bosch. As a board member, he is committed to championing technology literacy, mentorship, and equitable access to STEM opportunities for young learners.",
   },
   {
     name: "Dr. Florence Martin",
     role: "Director of STEM Education",
-    affiliation: "NC State University, College of Education",
+    affiliation: "NC State University",
+    image: "/florence-martin.jpg",
+    bio: "Dr. Florence Martin is a distinguished scholar and leader in educational technology and online learning. She serves as a Professor in the Learning, Design, and Technology program at North Carolina State University, where her work focuses on the design, development, and evaluation of effective digital learning environments. With extensive experience in STEM education, instructional design, and teacher training, Dr. Martin has contributed significantly to advancing innovative teaching practices that enhance student engagement and learning outcomes. At YMRF, she leads the development of STEM curricula and educational programs, ensuring students receive high-quality, research-driven learning experiences. She has published widely in top-tier academic journals and actively collaborates with educators worldwide.",
   },
   {
     name: "Dr. Andrew Jeyabose Sundar",
     role: "Director of Programs & Events",
-    affiliation: "",
+    affiliation: "UNC Chapel Hill School of Medicine",
+    image: "/andrew-jeyabose.jpg",
+    bio: "Dr. Andrew Jeyabose Sundar is a leading researcher in artificial intelligence and healthcare, currently serving as a Postdoctoral Research Associate at the University of North Carolina at Chapel Hill School of Medicine. His work focuses on developing interpretable deep learning models for neuroimaging, particularly in epilepsy and brain network analysis. With over a decade of academic and research experience, he has authored more than 90 peer-reviewed publications and is recognized among the top 2% of scientists worldwide based on citation impact. His expertise spans multimodal neuroimaging, deep learning, and computational biology. At YMRF, Dr. Sundar leads the design and execution of programs and events, including STEM workshops, research bootcamps, and innovation challenges. He is deeply committed to mentoring students and fostering hands-on learning experiences that bridge the gap between cutting-edge research and real-world applications.",
   },
 ]
 
@@ -154,18 +160,25 @@ export default function AboutPage() {
             description="Dedicated researchers and educators guiding YMRF's mission and strategic direction."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="space-y-12 mt-12">
             {boardMembers.map((member) => (
-              <Card key={member.name} className="hover:shadow-lg transition-shadow border-t-4 border-t-[#F4C430]">
-                <CardContent className="pt-8 pb-6">
-                  <div className="w-20 h-20 rounded-full bg-[#0B3C5D]/10 mx-auto mb-4 flex items-center justify-center">
-                    <Users className="w-8 h-8 text-[#0B3C5D]" />
+              <Card key={member.name} className="hover:shadow-lg transition-shadow border-l-4 border-l-[#F4C430] overflow-hidden">
+                <CardContent className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-xl object-cover flex-shrink-0 mx-auto md:mx-0"
+                    />
+                    <div>
+                      <h3 className="font-semibold text-[#0B3C5D] text-lg">{member.name}</h3>
+                      <p className="text-sm text-[#1FB6A6] mb-1">{member.role}</p>
+                      {member.affiliation && (
+                        <p className="text-xs text-muted-foreground mb-3">{member.affiliation}</p>
+                      )}
+                      <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-[#0B3C5D] text-center text-lg">{member.name}</h3>
-                  <p className="text-sm text-[#1FB6A6] text-center mb-2">{member.role}</p>
-                  {member.affiliation && (
-                    <p className="text-xs text-muted-foreground text-center">{member.affiliation}</p>
-                  )}
                 </CardContent>
               </Card>
             ))}
