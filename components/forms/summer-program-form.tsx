@@ -60,19 +60,45 @@ const sessions = [
   { id: "aug-03-07", label: "August 3-7", days: 5, themeId: "theme-4" },
 ]
 
-const STRIPE_LINKS = {
-  "4-day-full": "https://buy.stripe.com/7sYeVe9Omg8c72D8SC4ko05",
-  "4-day-half": "https://buy.stripe.com/fZu8wQ8KiaNS2Mngl44ko02",
-  "5-day-full": "https://buy.stripe.com/fZu3cw2lU1difz9fh04ko07",
-  "5-day-half": "https://buy.stripe.com/5kQdRa2lU6xC86H0m64ko04",
+const STRIPE_LINKS: Record<string, { full: string; half: string }> = {
+  "jun-15-18": {
+    full: "https://buy.stripe.com/7sYeVe9Omg8c72D8SC4ko05",
+    half: "https://buy.stripe.com/fZu8wQ8KiaNS2Mngl44ko02",
+  },
+  "jun-22-26": {
+    full: "https://buy.stripe.com/fZu3cw2lU1difz9fh04ko07",
+    half: "https://buy.stripe.com/5kQdRa2lU6xC86H0m64ko04",
+  },
+  "jun-29-jul-02": {
+    full: "https://buy.stripe.com/7sYeVe5y66xC5Yz6Ku4ko0d",
+    half: "https://buy.stripe.com/5kQ28saSqbRW1Ij8SC4ko01",
+  },
+  "jul-06-10": {
+    full: "https://buy.stripe.com/cNi5kEgcK6xC9aL4Cm4ko06",
+    half: "https://buy.stripe.com/8x2eVee4CaNS1Ij0m64ko08",
+  },
+  "jul-13-17": {
+    full: "https://buy.stripe.com/28E8wQd0yaNS72D0m64ko0e",
+    half: "https://buy.stripe.com/bJe6oIaSqg8c3Qrfh04ko09",
+  },
+  "jul-20-24": {
+    full: "https://buy.stripe.com/dRm14oaSq5ty3Qrd8S4ko0f",
+    half: "https://buy.stripe.com/00wbJ24u2g8c2Mnfh04ko0a",
+  },
+  "jul-27-31": {
+    full: "https://buy.stripe.com/00w8wQ4u2f48dr14Cm4ko0g",
+    half: "https://buy.stripe.com/9B6dRa9Om09e86HecW4ko0b",
+  },
+  "aug-03-07": {
+    full: "https://buy.stripe.com/28E3cw8Ki1di3Qr5Gq4ko0h",
+    half: "https://buy.stripe.com/4gM3cwf8Gf48biT5Gq4ko0c",
+  },
 }
 
-function getStripeLink(days: number, sessionType: string): string {
-  if (days === 4 && sessionType === "full") return STRIPE_LINKS["4-day-full"]
-  if (days === 4 && sessionType === "half") return STRIPE_LINKS["4-day-half"]
-  if (days === 5 && sessionType === "full") return STRIPE_LINKS["5-day-full"]
-  if (days === 5 && sessionType === "half") return STRIPE_LINKS["5-day-half"]
-  return "#"
+function getStripeLink(sessionId: string, sessionType: string): string {
+  const links = STRIPE_LINKS[sessionId]
+  if (!links) return "#"
+  return sessionType === "full" ? links.full : links.half
 }
 
 export function SummerProgramForm() {
@@ -129,7 +155,7 @@ export function SummerProgramForm() {
         <div className="space-y-3">
           {selectedSessionsData.map((session) => {
             const theme = themes.find((t) => t.id === session.themeId)
-            const baseLink = getStripeLink(session.days, sessionType)
+            const baseLink = getStripeLink(session.id, sessionType)
             const link = parentEmail ? `${baseLink}?prefilled_email=${encodeURIComponent(parentEmail)}` : baseLink
             return (
               <div key={session.id} className="flex items-center justify-between p-4 rounded-lg bg-white border border-border">
