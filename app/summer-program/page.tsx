@@ -84,6 +84,69 @@ export default function SummerProgramPage() {
         </div>
       </section>
 
+      {/* Weekly Themes */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase bg-[#F4C430]/10 text-[#F4C430] rounded-full mb-4">
+              8 Weeks of Discovery
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B3C5D] mb-4">
+              Weekly Themes
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Each two-week theme builds on exciting STEM concepts with hands-on projects kids will love.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="p-6 rounded-xl border border-blue-200 bg-blue-50/50">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">&#x1F680;</span>
+                <div>
+                  <h3 className="font-bold text-blue-700">Theme 1: Adventures in Coding!</h3>
+                  <p className="text-xs text-muted-foreground">Weeks 1 & 2 (June 15-26)</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">Boats that sail, snowmobiles that zoom, submarines that dive deep...</p>
+            </div>
+
+            <div className="p-6 rounded-xl border border-orange-200 bg-orange-50/50">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">&#x2699;&#xFE0F;</span>
+                <div>
+                  <h3 className="font-bold text-orange-700">Theme 2: Engineering Wonders!</h3>
+                  <p className="text-xs text-muted-foreground">Weeks 3 & 4 (June 29 - July 10)</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">A carousel that actually spins and a Trash Monster Machine that WAKES UP when you walk by...</p>
+            </div>
+
+            <div className="p-6 rounded-xl border border-yellow-200 bg-yellow-50/50">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">&#x26A1;</span>
+                <div>
+                  <h3 className="font-bold text-yellow-700">Theme 3: Energy & Forces Science!</h3>
+                  <p className="text-xs text-muted-foreground">Weeks 5 & 6 (July 13-24)</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">A bowling lane where YOU control the crash and a pinball machine with a real working flipper...</p>
+            </div>
+
+            <div className="p-6 rounded-xl border border-purple-200 bg-purple-50/50">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">&#x1F916;</span>
+                <div>
+                  <h3 className="font-bold text-purple-700">Theme 4: Computer Science & AI!</h3>
+                  <p className="text-xs text-muted-foreground">Weeks 7 & 8 (July 27 - August 7)</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">Train an AI to Strike A Pose and build a robot that reads colour and makes its own decisions...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sessions & Registration */}
       <section id="register" className="py-16 bg-muted/50 scroll-mt-16">
         <div className="container mx-auto px-4">
@@ -95,7 +158,7 @@ export default function SummerProgramPage() {
               Choose Your Session
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Select a week, pick full or half day, and complete registration. Multiple sessions can be registered separately.
+              Select one or more weeks, pick full or half day, and complete registration.
             </p>
           </div>
 

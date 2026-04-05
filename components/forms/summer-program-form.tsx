@@ -8,17 +8,56 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, Calendar, ExternalLink } from "lucide-react"
+import { CheckCircle2, Calendar, ExternalLink, Rocket, Wrench, Zap, Bot } from "lucide-react"
+
+const themes = [
+  {
+    id: "theme-1",
+    icon: Rocket,
+    title: "Adventures in Coding!",
+    description: "Boats that sail, snowmobiles that zoom, submarines that dive deep...",
+    weeks: ["jun-15-18", "jun-22-26"],
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
+  {
+    id: "theme-2",
+    icon: Wrench,
+    title: "Engineering Wonders!",
+    description: "A carousel that actually spins and a Trash Monster Machine that WAKES UP when you walk by...",
+    weeks: ["jun-29-jul-02", "jul-06-10"],
+    color: "text-orange-500",
+    bg: "bg-orange-500/10",
+  },
+  {
+    id: "theme-3",
+    icon: Zap,
+    title: "Energy & Forces Science!",
+    description: "A bowling lane where YOU control the crash and a pinball machine with a real working flipper...",
+    weeks: ["jul-13-17", "jul-20-24"],
+    color: "text-yellow-500",
+    bg: "bg-yellow-500/10",
+  },
+  {
+    id: "theme-4",
+    icon: Bot,
+    title: "Computer Science & AI!",
+    description: "Train an AI to Strike A Pose and build a robot that reads colour and makes its own decisions...",
+    weeks: ["jul-27-31", "aug-03-07"],
+    color: "text-purple-500",
+    bg: "bg-purple-500/10",
+  },
+]
 
 const sessions = [
-  { id: "jun-15-18", label: "June 15–18", days: 4 },
-  { id: "jun-22-26", label: "June 22–26", days: 5 },
-  { id: "jun-29-jul-02", label: "June 29 – July 2", days: 4 },
-  { id: "jul-06-10", label: "July 6–10", days: 5 },
-  { id: "jul-13-17", label: "July 13–17", days: 5 },
-  { id: "jul-20-24", label: "July 20–24", days: 5 },
-  { id: "jul-27-31", label: "July 27–31", days: 5 },
-  { id: "aug-03-07", label: "August 3–7", days: 5 },
+  { id: "jun-15-18", label: "June 15-18", days: 4, themeId: "theme-1" },
+  { id: "jun-22-26", label: "June 22-26", days: 5, themeId: "theme-1" },
+  { id: "jun-29-jul-02", label: "June 29 - July 2", days: 4, themeId: "theme-2" },
+  { id: "jul-06-10", label: "July 6-10", days: 5, themeId: "theme-2" },
+  { id: "jul-13-17", label: "July 13-17", days: 5, themeId: "theme-3" },
+  { id: "jul-20-24", label: "July 20-24", days: 5, themeId: "theme-3" },
+  { id: "jul-27-31", label: "July 27-31", days: 5, themeId: "theme-4" },
+  { id: "aug-03-07", label: "August 3-7", days: 5, themeId: "theme-4" },
 ]
 
 const STRIPE_LINKS = {
@@ -37,12 +76,18 @@ function getStripeLink(days: number, sessionType: string): string {
 }
 
 export function SummerProgramForm() {
-  const [selectedSession, setSelectedSession] = useState("")
+  const [selectedSessions, setSelectedSessions] = useState<string[]>([])
   const [sessionType, setSessionType] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const selectedSessionData = sessions.find((s) => s.id === selectedSession)
+  const toggleSession = (id: string) => {
+    setSelectedSessions((prev) =>
+      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
+    )
+  }
+
+  const selectedSessionsData = sessions.filter((s) => selectedSessions.includes(s.id))
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -57,7 +102,7 @@ export function SummerProgramForm() {
       newErrors.parentEmail = "Valid email is required"
     }
     if (!formData.get("parentPhone")) newErrors.parentPhone = "Phone number is required"
-    if (!selectedSession) newErrors.session = "Please select a session"
+    if (selectedSessions.length === 0) newErrors.session = "Please select at least one session"
     if (!sessionType) newErrors.sessionType = "Please select full day or half day"
 
     if (Object.keys(newErrors).length > 0) {
@@ -67,11 +112,13 @@ export function SummerProgramForm() {
 
     setErrors({})
 
-    // Redirect to Stripe payment
-    const link = getStripeLink(selectedSessionData?.days || 5, sessionType)
-    if (link.startsWith("http")) {
-      window.open(link, "_blank")
-    }
+    // Open Stripe links for each selected session
+    selectedSessionsData.forEach((session, index) => {
+      const link = getStripeLink(session.days, sessionType)
+      if (link.startsWith("http")) {
+        setTimeout(() => window.open(link, "_blank"), index * 500)
+      }
+    })
     setIsSubmitted(true)
   }
 
@@ -81,38 +128,82 @@ export function SummerProgramForm() {
         <CheckCircle2 className="w-16 h-16 text-[#1FB6A6] mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-[#0B3C5D] mb-2">Registration Submitted!</h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Thank you for registering! Please complete your payment on the Stripe checkout page. You will receive a confirmation email shortly.
+          Thank you for registering! Please complete your payment on the Stripe checkout page{selectedSessions.length > 1 ? "s" : ""}. You will receive a confirmation email shortly.
         </p>
+        {selectedSessions.length > 1 && (
+          <p className="text-sm text-muted-foreground mt-2">
+            Note: A separate payment page was opened for each selected week.
+          </p>
+        )}
       </div>
     )
   }
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* Session Selection */}
+      {/* Themed Session Selection */}
       <div className="mb-8">
-        <h3 className="text-lg font-semibold text-[#0B3C5D] mb-4">Available Sessions</h3>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {sessions.map((session) => (
-            <button
-              key={session.id}
-              type="button"
-              onClick={() => setSelectedSession(session.id)}
-              className={`p-4 rounded-xl border text-left transition-all ${
-                selectedSession === session.id
-                  ? "border-[#1FB6A6] bg-[#1FB6A6]/10 ring-2 ring-[#1FB6A6]/30"
-                  : "border-border bg-card hover:border-[#1FB6A6]/40"
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <Calendar className={`w-5 h-5 ${selectedSession === session.id ? "text-[#1FB6A6]" : "text-muted-foreground"}`} />
-                <div>
-                  <p className="font-medium text-[#0B3C5D]">{session.label}</p>
-                  <p className="text-xs text-muted-foreground">{session.days}-day session</p>
+        <h3 className="text-lg font-semibold text-[#0B3C5D] mb-2">Select Your Weeks</h3>
+        <p className="text-sm text-muted-foreground mb-4">You can select multiple weeks across different themes.</p>
+
+        <div className="space-y-6">
+          {themes.map((theme) => {
+            const themeWeeks = sessions.filter((s) => s.themeId === theme.id)
+            const allSelected = themeWeeks.every((w) => selectedSessions.includes(w.id))
+            return (
+              <div key={theme.id} className="rounded-xl border border-border overflow-hidden">
+                <div className={`px-5 py-4 ${theme.bg} flex items-start gap-3`}>
+                  <theme.icon className={`w-6 h-6 mt-0.5 ${theme.color} flex-shrink-0`} />
+                  <div className="flex-1">
+                    <h4 className={`font-semibold ${theme.color}`}>{theme.title}</h4>
+                    <p className="text-sm text-muted-foreground">{theme.description}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (allSelected) {
+                        setSelectedSessions((prev) => prev.filter((id) => !themeWeeks.some((w) => w.id === id)))
+                      } else {
+                        setSelectedSessions((prev) => [...new Set([...prev, ...themeWeeks.map((w) => w.id)])])
+                      }
+                    }}
+                    className={`text-xs px-3 py-1 rounded-full border font-medium transition-all flex-shrink-0 mt-1 ${
+                      allSelected
+                        ? "border-[#1FB6A6] bg-[#1FB6A6] text-white"
+                        : "border-border text-muted-foreground hover:border-[#1FB6A6]/40"
+                    }`}
+                  >
+                    {allSelected ? "Selected" : "Select Both"}
+                  </button>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-3 p-4 bg-card">
+                  {themeWeeks.map((session) => (
+                    <button
+                      key={session.id}
+                      type="button"
+                      onClick={() => toggleSession(session.id)}
+                      className={`p-4 rounded-xl border text-left transition-all ${
+                        selectedSessions.includes(session.id)
+                          ? "border-[#1FB6A6] bg-[#1FB6A6]/10 ring-2 ring-[#1FB6A6]/30"
+                          : "border-border bg-background hover:border-[#1FB6A6]/40"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <Calendar className={`w-5 h-5 ${selectedSessions.includes(session.id) ? "text-[#1FB6A6]" : "text-muted-foreground"}`} />
+                        <div>
+                          <p className="font-medium text-[#0B3C5D]">{session.label}</p>
+                          <p className="text-xs text-muted-foreground">{session.days}-day session</p>
+                        </div>
+                        {selectedSessions.includes(session.id) && (
+                          <CheckCircle2 className="w-5 h-5 text-[#1FB6A6] ml-auto" />
+                        )}
+                      </div>
+                    </button>
+                  ))}
                 </div>
               </div>
-            </button>
-          ))}
+            )
+          })}
         </div>
         {errors.session && <p className="text-xs text-red-500 mt-2">{errors.session}</p>}
       </div>
@@ -131,7 +222,7 @@ export function SummerProgramForm() {
             }`}
           >
             <p className="font-medium text-[#0B3C5D]">Full Day</p>
-            <p className="text-xs text-muted-foreground">9:00 AM – 4:00 PM</p>
+            <p className="text-xs text-muted-foreground">9:00 AM - 4:00 PM</p>
           </button>
           <button
             type="button"
@@ -143,7 +234,7 @@ export function SummerProgramForm() {
             }`}
           >
             <p className="font-medium text-[#0B3C5D]">Half Day</p>
-            <p className="text-xs text-muted-foreground">9:00 AM – 12:00 PM</p>
+            <p className="text-xs text-muted-foreground">9:00 AM - 12:00 PM</p>
           </button>
         </div>
         {errors.sessionType && <p className="text-xs text-red-500 mt-2">{errors.sessionType}</p>}
@@ -248,25 +339,34 @@ export function SummerProgramForm() {
         </div>
 
         {/* Summary */}
-        {selectedSession && sessionType && (
+        {selectedSessions.length > 0 && sessionType && (
           <Card className="bg-[#0B3C5D]/5 border-[#0B3C5D]/10">
             <CardContent className="pt-6">
               <h4 className="font-semibold text-[#0B3C5D] mb-2">Registration Summary</h4>
               <div className="text-sm text-muted-foreground space-y-1">
-                <p><strong>Session:</strong> {selectedSessionData?.label} ({selectedSessionData?.days}-day)</p>
-                <p><strong>Type:</strong> {sessionType === "full" ? "Full Day (9AM–4PM)" : "Half Day (9AM–12PM)"}</p>
+                <p><strong>Selected Weeks ({selectedSessions.length}):</strong></p>
+                <ul className="list-disc list-inside space-y-0.5 ml-2">
+                  {selectedSessionsData.map((s) => {
+                    const theme = themes.find((t) => t.id === s.themeId)
+                    return (
+                      <li key={s.id}>{s.label} ({s.days}-day) — {theme?.title}</li>
+                    )
+                  })}
+                </ul>
+                <p className="mt-2"><strong>Type:</strong> {sessionType === "full" ? "Full Day (9AM-4PM)" : "Half Day (9AM-12PM)"}</p>
               </div>
             </CardContent>
           </Card>
         )}
 
         <Button type="submit" className="w-full bg-[#1FB6A6] hover:bg-[#1a9e90] text-white text-base py-6">
-          Register & Proceed to Payment
+          Register & Proceed to Payment {selectedSessions.length > 1 ? `(${selectedSessions.length} weeks)` : ""}
           <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
 
         <p className="text-xs text-center text-muted-foreground">
           By registering, you agree to our program policies. Payment is processed securely via Stripe.
+          {selectedSessions.length > 1 && " A separate payment page will open for each selected week."}
         </p>
       </form>
     </div>
