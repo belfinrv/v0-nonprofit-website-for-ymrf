@@ -111,30 +111,45 @@ export function SummerProgramForm() {
     }
 
     setErrors({})
-
-    // Open Stripe links for each selected session
-    selectedSessionsData.forEach((session, index) => {
-      const link = getStripeLink(session.days, sessionType)
-      if (link.startsWith("http")) {
-        setTimeout(() => window.open(link, "_blank"), index * 500)
-      }
-    })
     setIsSubmitted(true)
   }
 
   if (isSubmitted) {
     return (
-      <div className="text-center py-12 px-6 rounded-xl bg-[#1FB6A6]/10 border border-[#1FB6A6]/20 max-w-2xl mx-auto">
-        <CheckCircle2 className="w-16 h-16 text-[#1FB6A6] mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-[#0B3C5D] mb-2">Registration Submitted!</h3>
-        <p className="text-muted-foreground max-w-md mx-auto">
-          Thank you for registering! Please complete your payment on the Stripe checkout page{selectedSessions.length > 1 ? "s" : ""}. You will receive a confirmation email shortly.
-        </p>
-        {selectedSessions.length > 1 && (
-          <p className="text-sm text-muted-foreground mt-2">
-            Note: A separate payment page was opened for each selected week.
+      <div className="py-12 px-6 rounded-xl bg-[#1FB6A6]/10 border border-[#1FB6A6]/20 max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <Calendar className="w-16 h-16 text-[#0B3C5D] mx-auto mb-4" />
+          <h3 className="text-2xl font-bold text-[#0B3C5D] mb-2">Complete Your Payment</h3>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Your information has been saved. Please click the payment link below for each week to complete registration.
           </p>
-        )}
+        </div>
+        <div className="space-y-3">
+          {selectedSessionsData.map((session) => {
+            const theme = themes.find((t) => t.id === session.themeId)
+            const link = getStripeLink(session.days, sessionType)
+            return (
+              <div key={session.id} className="flex items-center justify-between p-4 rounded-lg bg-white border border-border">
+                <div>
+                  <p className="font-medium text-[#0B3C5D]">{session.label}</p>
+                  <p className="text-xs text-muted-foreground">{theme?.title} — {session.days}-day {sessionType === "full" ? "Full Day" : "Half Day"}</p>
+                </div>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1FB6A6] hover:bg-[#1a9e90] text-white text-sm font-medium transition-colors"
+                >
+                  Pay Now
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            )
+          })}
+        </div>
+        <p className="text-xs text-center text-muted-foreground mt-6">
+          Payment is processed securely via Stripe. You will receive a confirmation email after each payment.
+        </p>
       </div>
     )
   }
