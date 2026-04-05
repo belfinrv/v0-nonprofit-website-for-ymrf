@@ -78,6 +78,7 @@ function getStripeLink(days: number, sessionType: string): string {
 export function SummerProgramForm() {
   const [selectedSessions, setSelectedSessions] = useState<string[]>([])
   const [sessionType, setSessionType] = useState("")
+  const [parentEmail, setParentEmail] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -111,6 +112,7 @@ export function SummerProgramForm() {
     }
 
     setErrors({})
+    setParentEmail(formData.get("parentEmail") as string)
     setIsSubmitted(true)
   }
 
@@ -121,13 +123,14 @@ export function SummerProgramForm() {
           <Calendar className="w-16 h-16 text-[#0B3C5D] mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-[#0B3C5D] mb-2">Complete Your Payment</h3>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Your information has been saved. Please click the payment link below for each week to complete registration.
+            Please click &quot;Pay Now&quot; for each week below to complete your registration. Your registration is only confirmed after payment.
           </p>
         </div>
         <div className="space-y-3">
           {selectedSessionsData.map((session) => {
             const theme = themes.find((t) => t.id === session.themeId)
-            const link = getStripeLink(session.days, sessionType)
+            const baseLink = getStripeLink(session.days, sessionType)
+            const link = parentEmail ? `${baseLink}?prefilled_email=${encodeURIComponent(parentEmail)}` : baseLink
             return (
               <div key={session.id} className="flex items-center justify-between p-4 rounded-lg bg-white border border-border">
                 <div>
@@ -147,9 +150,18 @@ export function SummerProgramForm() {
             )
           })}
         </div>
-        <p className="text-xs text-center text-muted-foreground mt-6">
-          Payment is processed securely via Stripe. You will receive a confirmation email after each payment.
-        </p>
+        <div className="mt-6 space-y-3">
+          <p className="text-xs text-center text-muted-foreground">
+            Payment is processed securely via Stripe. You will receive a confirmation email after each payment.
+          </p>
+          <button
+            type="button"
+            onClick={() => setIsSubmitted(false)}
+            className="block mx-auto text-sm text-[#1FB6A6] hover:underline"
+          >
+            Go back and edit
+          </button>
+        </div>
       </div>
     )
   }
