@@ -8,12 +8,11 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, Calendar, ExternalLink, Rocket, Wrench, Zap, Bot } from "lucide-react"
+import { CheckCircle2, Calendar, ExternalLink } from "lucide-react"
 
 const themes = [
   {
     id: "theme-1",
-    icon: Rocket,
     title: "Adventures in Coding!",
     description: "Boats that sail, snowmobiles that zoom, submarines that dive deep...",
     weeks: ["jun-15-18", "jun-22-26"],
@@ -22,7 +21,6 @@ const themes = [
   },
   {
     id: "theme-2",
-    icon: Wrench,
     title: "Engineering Wonders!",
     description: "A carousel that actually spins and a Trash Monster Machine that WAKES UP when you walk by...",
     weeks: ["jun-29-jul-02", "jul-06-10"],
@@ -31,7 +29,6 @@ const themes = [
   },
   {
     id: "theme-3",
-    icon: Zap,
     title: "Energy & Forces Science!",
     description: "A bowling lane where YOU control the crash and a pinball machine with a real working flipper...",
     weeks: ["jul-13-17", "jul-20-24"],
@@ -40,7 +37,6 @@ const themes = [
   },
   {
     id: "theme-4",
-    icon: Bot,
     title: "Computer Science & AI!",
     description: "Train an AI to Strike A Pose and build a robot that reads colour and makes its own decisions...",
     weeks: ["jul-27-31", "aug-03-07"],
@@ -206,7 +202,6 @@ export function SummerProgramForm() {
             return (
               <div key={theme.id} className="rounded-xl border border-border overflow-hidden">
                 <div className={`px-5 py-4 ${theme.bg} flex items-start gap-3`}>
-                  <theme.icon className={`w-6 h-6 mt-0.5 ${theme.color} flex-shrink-0`} />
                   <div className="flex-1">
                     <h4 className={`font-semibold ${theme.color}`}>{theme.title}</h4>
                     <p className="text-sm text-muted-foreground">{theme.description}</p>
