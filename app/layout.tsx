@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: "Where Young Ideas Become Research",
   },
   icons: {
-    icon: "/icon.svg",
+    icon: "/favicon.ico",
     apple: "/apple-icon.png",
   },
     generator: 'v0.app'
