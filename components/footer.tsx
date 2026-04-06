@@ -55,7 +55,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-white/70 text-sm">
                 <Mail className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />
-                <span>researchbelfin@gmail.com</span>
+                <span>contact@ymrf.org</span>
               </li>
               <li className="flex items-start gap-2 text-white/70 text-sm">
                 <Phone className="w-4 h-4 mt-0.5 text-[#1FB6A6]" />
@@ -72,7 +72,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-[#F4C430] mb-4">Connect With Us</h3>
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Have questions or want to get involved? Reach out to us at researchbelfin@gmail.com
+              Have questions or want to get involved? Reach out to us at contact@ymrf.org
             </p>
             <p className="text-white/60 text-xs leading-relaxed">
               Social media channels coming soon!

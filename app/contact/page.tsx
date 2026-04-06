@@ -14,8 +14,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    content: "researchbelfin@gmail.com",
-    link: "mailto:researchbelfin@gmail.com",
+    content: "contact@ymrf.org",
+    link: "mailto:contact@ymrf.org",
   },
   {
     icon: Phone,

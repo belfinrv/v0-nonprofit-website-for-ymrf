@@ -38,7 +38,7 @@ To run the project locally:
 
 ## Contact
 
-For inquiries, please contact us at [researchbelfin@gmail.com](mailto:researchbelfin@gmail.com) or visit our website.
+For inquiries, please contact us at [contact@ymrf.org](mailto:contact@ymrf.org) or visit our website.
 
 ---
 
