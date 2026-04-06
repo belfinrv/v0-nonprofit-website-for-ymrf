@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import { SectionHeader } from "@/components/section-header"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, MapPin, Phone, Clock } from "lucide-react"
-import { ContactForm } from "@/components/forms/contact-form"
+import { Mail, MapPin, Phone, Clock, Send } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -55,11 +54,24 @@ export default function ContactPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Email Us */}
             <div>
               <SectionHeader badge="Send a Message" title="Get in Touch" centered={false} />
-              <div className="mt-8">
-                <ContactForm />
+              <div className="mt-8 p-8 rounded-xl bg-card border border-border shadow-sm text-center">
+                <div className="w-16 h-16 rounded-full bg-[#1FB6A6]/10 flex items-center justify-center mx-auto mb-6">
+                  <Send className="w-8 h-8 text-[#1FB6A6]" />
+                </div>
+                <h3 className="text-xl font-semibold text-[#0B3C5D] mb-3">Email Us Directly</h3>
+                <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                  Have a question about our programs, sponsorship, or how to get involved? Send us an email and we'll get back to you within 48 hours.
+                </p>
+                <a
+                  href="mailto:contact@ymrf.org?subject=Inquiry%20from%20YMRF%20Website"
+                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-[#1FB6A6] hover:bg-[#1a9e90] text-white font-medium transition-colors text-lg"
+                >
+                  <Mail className="w-5 h-5" />
+                  contact@ymrf.org
+                </a>
               </div>
             </div>
 
