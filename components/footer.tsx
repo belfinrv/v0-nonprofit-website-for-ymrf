@@ -30,7 +30,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
-              Empowering high school students to explore STEM research through mentorship, hands-on projects, and real
+              Empowering elementary, middle, and high school students to explore STEM research through mentorship, hands-on projects, and real
               scientific events.
             </p>
           </div>

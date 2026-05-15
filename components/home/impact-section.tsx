@@ -6,7 +6,7 @@ const goals = [
     icon: Target,
     title: "Our Vision",
     description:
-      "A world where every high school student with curiosity and drive has access to real research experiences that shape their future in STEM.",
+      "A world where every elementary, middle, and high school student with curiosity and drive has access to real research experiences that shape their future in STEM.",
   },
   {
     icon: Rocket,
@@ -29,7 +29,7 @@ export function ImpactSection() {
         <SectionHeader
           badge="Our Purpose"
           title="Building the Future of STEM"
-          description="YMRF is a newly launched nonprofit with a bold mission: to make research accessible to high school students everywhere."
+          description="YMRF is a newly launched nonprofit with a bold mission: to make research accessible to elementary, middle, and high school students everywhere."
         />
 
         <div className="grid md:grid-cols-3 gap-8 mt-12">

@@ -12,10 +12,10 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Young Minds Research Foundation | Where Young Ideas Become Research",
   description:
-    "YMRF empowers high school students to explore STEM research through mentorship, hands-on projects, and real scientific events. Join our research programs, boot camps, and hackathons.",
+    "YMRF empowers elementary, middle, and high school students to explore STEM research through mentorship, hands-on projects, and real scientific events. Join our research programs, boot camps, and hackathons.",
   keywords: [
     "STEM research",
-    "high school students",
+    "elementary and middle school students",
     "mentorship",
     "science education",
     "research programs",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Young Minds Research Foundation",
-    description: "Where Young Ideas Become Research - Empowering high school students in STEM",
+    description: "Where Young Ideas Become Research - Empowering elementary, middle, and high school students in STEM",
     type: "website",
     locale: "en_US",
     siteName: "YMRF",

@@ -59,7 +59,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto text-pretty leading-relaxed">
-            YMRF empowers high school students to explore STEM research through mentorship, hands-on projects, and real
+            YMRF empowers elementary, middle, and high school students to explore STEM research through mentorship, hands-on projects, and real
             scientific events.
           </p>
 

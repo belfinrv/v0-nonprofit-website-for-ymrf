@@ -26,7 +26,7 @@ export function MissionSection() {
         <SectionHeader
           badge="Our Mission"
           title="Transforming Ideas into Real-World Impact"
-          description="Young Minds Research Foundation (YMRF) equips high school students to pursue research-driven careers in STEM by transforming ideas into real-world impact through mentorship, education, and hands-on discovery."
+          description="Young Minds Research Foundation (YMRF) empowers elementary, middle, and high school students to pursue research-driven careers in STEM by transforming ideas into real-world impact through mentorship, education, and hands-on discovery."
         />
 
         <div className="grid md:grid-cols-3 gap-8 mt-12">

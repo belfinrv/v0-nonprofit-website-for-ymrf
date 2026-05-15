@@ -6,7 +6,7 @@ import { Target, BookOpen, Rocket, GraduationCap, Lightbulb, Users, Shield, Hear
 export const metadata: Metadata = {
   title: "About | Young Minds Research Foundation",
   description:
-    "Learn about YMRF's mission to empower high school students in STEM research through mentorship, education, and hands-on discovery.",
+    "Learn about YMRF's mission to empower elementary, middle, and high school students in STEM research through mentorship, education, and hands-on discovery.",
 }
 
 const whatWeDo = [
@@ -49,7 +49,7 @@ const whyItMatters = [
 const boardMembers = [
   {
     name: "Dr. Belfin Robinson",
-    role: "Executive Director",
+    role: "Advisory Board Member",
     affiliation: "YMRF",
     image: "/Belfin Robinson Vimala.jpg",
     imagePosition: "object-top",
@@ -57,7 +57,7 @@ const boardMembers = [
   },
   {
     name: "Dr. Florence Martin",
-    role: "Director of STEM Education",
+    role: "Advisory Board Member",
     affiliation: "YMRF",
     image: "/florance_martinPhoto.png",
     imagePosition: "object-top",
@@ -65,7 +65,7 @@ const boardMembers = [
   },
   {
     name: "Dr. Andrew Jeyabose Sundar",
-    role: "Director of Programs & Events",
+    role: "Advisory Board Member",
     affiliation: "YMRF",
     image: "/Andrew_photo.jpeg",
     imagePosition: "object-[center_20%]",
@@ -127,8 +127,8 @@ export default function AboutPage() {
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   Young Minds Research Foundation (YMRF) is a nonprofit organization dedicated to bridging the gap
-                  between high school education and real-world scientific research. We believe that every student with
-                  curiosity and drive deserves the opportunity to explore their potential.
+                  between elementary, middle, and high school education and real-world scientific research. We believe
+                  that every student with curiosity and drive deserves the opportunity to explore their potential.
                 </p>
                 <p>
                   Founded by educators and researchers who saw the need for earlier exposure to research methodologies,
@@ -154,11 +154,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Board of Directors */}
+      {/* Board of Advisors */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="Board of Directors"
+            badge="Board of Advisors"
             title="Our Leadership"
             description="Dedicated researchers and educators guiding YMRF's mission and strategic direction."
           />
