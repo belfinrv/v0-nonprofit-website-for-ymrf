@@ -2,8 +2,7 @@ import type { Metadata } from "next"
 import { SectionHeader } from "@/components/section-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, Clock, Heart, Award, FileText, Users } from "lucide-react"
-import { MentorApplicationForm } from "@/components/forms/mentor-application-form"
+import { CheckCircle2, Clock, Heart, Award, FileText, Users, Mail } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Become a Mentor | Young Minds Research Foundation",
@@ -165,11 +164,26 @@ export default function MentorsPage() {
           <SectionHeader
             badge="Apply Now"
             title="Join Our Mentor Network"
-            description="Complete the form below to express your interest in becoming a YMRF mentor. We review applications on a rolling basis."
+            description="Send us an email to express your interest in becoming a YMRF mentor. We review applications on a rolling basis."
           />
 
           <div className="max-w-2xl mx-auto mt-12">
-            <MentorApplicationForm />
+            <div className="p-8 rounded-xl bg-card border border-border shadow-sm text-center">
+              <div className="w-16 h-16 rounded-full bg-[#1FB6A6]/10 flex items-center justify-center mx-auto mb-6">
+                <Mail className="w-8 h-8 text-[#1FB6A6]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#0B3C5D] mb-3">Email Us to Apply</h3>
+              <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                Introduce yourself, share your research background, and tell us why you'd like to mentor with YMRF. We'll get back to you within 48 hours.
+              </p>
+              <a
+                href="mailto:contact@ymrf.org?subject=Mentor%20Application%20%E2%80%93%20YMRF"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-[#1FB6A6] hover:bg-[#1a9e90] text-white font-medium transition-colors text-lg"
+              >
+                <Mail className="w-5 h-5" />
+                contact@ymrf.org
+              </a>
+            </div>
           </div>
         </div>
       </section>
