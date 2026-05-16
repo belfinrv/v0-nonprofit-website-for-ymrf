@@ -103,10 +103,21 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Social Links - Coming Soon */}
+              {/* Social Media */}
               <div className="mt-8 p-4 rounded-lg bg-muted/50 border border-border">
-                <p className="font-semibold text-[#0B3C5D] mb-2">Social Media</p>
-                <p className="text-sm text-muted-foreground">Follow us soon! Our social media channels are being set up and will be live shortly.</p>
+                <p className="font-semibold text-[#0B3C5D] mb-3">Follow Us on Facebook</p>
+                <div className="overflow-hidden rounded-lg">
+                  <iframe
+                    src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%2F%3Ffbid%3D122093312553335162%26set%3Da.122093309967335162&show_text=true&width=500"
+                    width="100%"
+                    height="290"
+                    style={{ border: "none", overflow: "hidden" }}
+                    scrolling="no"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  />
+                </div>
               </div>
             </div>
           </div>
